@@ -1,42 +1,26 @@
-def gcd(m,n):
-    while m%n != 0:
-        oldm = m
-        oldn = n
-
-        m = oldn
-        n = oldm%oldn
-    return n
+from fractions import Fraction
 
 class Fraction:
-     def __init__(self,top,bottom):
-         self.num = top
-         self.den = bottom
-         
 
-     def __str__(self):
-         return str(self.num)+"/"+str(self.den)
-         
+    def __init__(self, a, b):
+        self.a = 0
+        self.b = 0
 
-     def show(self):
-         print(self.num,"/",self.den)
-         
-         
 
-     def __add__(self,otherfraction):
-         newnum = self.num*otherfraction.den + \
-                      self.den*otherfraction.num
-         newden = self.den * otherfraction.den
-         common = gcd(newnum,newden)
-         return Fraction(newnum//common,newden//common)
+    def InputValue(self):
+        self.a = int(input("Введите число 1:\n"))
+        self.b = int(input("Введите число 2:\n"))
 
-     def __eq__(self, other):
-         firstnum = self.num * other.den
-         secondnum = other.num * self.den
-         
 
-         return firstnum == secondnum
+    def __str__(self):
+        return str(self.a) + "/" + str(self.b)
 
-x = Fraction(1,2)
-y = Fraction(2,3)
-print(x+y)
-print(x == y)
+
+    def show(self):
+        print(" ")
+        print(self.a, "/", "\n", "/", self.b)
+
+
+program = Fraction(0,0)
+program.InputValue()
+program.show()
