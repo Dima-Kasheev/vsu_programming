@@ -10,9 +10,6 @@ class Fraction:
         self.b = int(input("Введите число 2:\n"))
 
 
-    def __str__(self):
-        return str(self.a) + "/" + str(self.b)
-
 
     def __str__(self):
         print(" ")
